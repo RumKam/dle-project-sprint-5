@@ -15,7 +15,7 @@
 
 ## Данные
 
-Используйте публичный датасет **NEREL** в формате JSONL: `train`, `dev`, `test`. Этот датасет содержит тексты, сущности (строки с офсетами) и отношения/события. Его можно скачать с Hugging Face.
+Используется публичный датасет **NEREL** в формате JSONL: `train`, `dev`, `test`. Этот датасет содержит тексты, сущности (строки с офсетами) и отношения/события.
 
 ## Загрузка данных
 
@@ -27,10 +27,11 @@ wget -O dev.jsonl   "https://huggingface.co/datasets/iluvvatar/NEREL/resolve/mai
 wget -O test.jsonl  "https://huggingface.co/datasets/iluvvatar/NEREL/resolve/main/data/test.jsonl"
 wget -O ent_types.jsonl "https://huggingface.co/datasets/iluvvatar/NEREL/resolve/main/ent_types.jsonl"
 wget -O rel_types.jsonl "https://huggingface.co/datasets/iluvvatar/NEREL/resolve/main/rel_types.jsonl"
+```
 
 ## Основные этапы выполнения
 
-### 1. EDA (разведочный анализ)
+### 1. EDA
 - Частотность типов сущностей и отношений.
 - Распределение длины текстов и количества сущностей на документ.
 - Выводы по структуре датасета.
@@ -74,17 +75,6 @@ wget -O rel_types.jsonl "https://huggingface.co/datasets/iluvvatar/NEREL/resolve
 - Token-level F1 (NER) ≥ 0.5  
 - Multihot micro-F1 (классификация событий) ≥ 0.8  
 
-**Итоговый отчёт включает:**  
-- Jupyter Notebook с полным выполнением.  
-- Графики обучения и таблицы метрик.  
-- Сравнение исходной и квантизованной моделей (размер, скорость, точность).  
-- Выводы о целесообразности совместного обучения.
-
-## Требования к аппаратному обеспечению
-
-- **GPU**: рекомендуется одна NVIDIA GPU с объёмом памяти ≥ 8 ГБ (например, T4).  
-- **Время выполнения**: 5–6 часов на одной GPU (зависит от выбранной модели и количества эпох).  
-- **RAM**: 16 ГБ.
 
 ## Использование квантизации
 
